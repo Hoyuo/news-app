@@ -1,7 +1,7 @@
 package com.example.template.data.di
 
-import com.example.template.data.repository.ExampleRepository
-import com.example.template.data.repository.ExampleRepositoryImpl
+import com.example.template.data.repository.NewsRepository
+import com.example.template.data.repository.NewsRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 abstract class DataModule {
     @Binds
     @Singleton
-    abstract fun bindExampleRepository(
-        exampleRepositoryImpl: ExampleRepositoryImpl,
-    ): ExampleRepository
+    abstract fun bindNewsRepository(
+        exampleRepositoryImpl: NewsRepositoryImpl,
+    ): NewsRepository
 }

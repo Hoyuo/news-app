@@ -1,7 +1,7 @@
 package com.example.template.data.remote.di
 
-import com.example.template.data.remote.source.ExampleRemoteSource
-import com.example.template.data.remote.source.ExampleRemoteSourceImpl
+import com.example.template.data.remote.source.NewsRemoteSource
+import com.example.template.data.remote.source.NewsRemoteSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,5 +14,5 @@ abstract class RemoteSourceModule {
 
     @Binds
     @Singleton
-    abstract fun bindExampleRemoteSource(remoteSourceImpl: ExampleRemoteSourceImpl): ExampleRemoteSource
+    abstract fun bindNewsRemoteSource(remoteSourceImpl: NewsRemoteSourceImpl): NewsRemoteSource
 }

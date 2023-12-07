@@ -1,6 +1,7 @@
 package com.example.template.data.remote.network.interceptor
 
-import com.example.template.data.remote.network.AccessToken
+import com.example.template.data.remote.network.ApiKey
+import com.example.template.data.remote.network.CountryCode
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,27 +21,23 @@ object InterceptorModule {
         }
     }
 
-    @HeaderInterceptor
-    @Provides
-    fun provideHeaderInterceptor(): Interceptor {
-        return Interceptor { chain ->
-            val request = chain.request().newBuilder()
-                .addHeader("Content-Type", "application/json")
-                .addHeader("User-Agent", System.getProperty("http.agent"))
-                .build()
-            chain.proceed(request)
-        }
-    }
-
     @AuthInterceptor
     @Provides
     fun provideAuthInterceptor(
-        @AccessToken accessToken: String,
+        @ApiKey apikey: String,
+        @CountryCode countryCode: String,
     ): Interceptor {
         return Interceptor { chain ->
-            val request = chain.request().newBuilder()
-                .addHeader("Authorization", "Bearer $accessToken")
+            val url = chain.request().url.newBuilder()
+                .addQueryParameter("apiKey", apikey)
+                .addQueryParameter("country", countryCode)
                 .build()
+
+            val request = chain.request()
+                .newBuilder()
+                .url(url)
+                .build()
+
             chain.proceed(request)
         }
     }

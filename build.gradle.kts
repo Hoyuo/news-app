@@ -61,6 +61,25 @@ allprojects {
     }
 }
 
+subprojects {
+    tasks {
+        afterEvaluate {
+            val predicate: (Task) -> Boolean = { task: Task ->
+                if (isAndroidProject) {
+                    task.name.startsWith("preBuild")
+                } else {
+                    task.name.startsWith("compile")
+                }
+            }
+            container
+                .filter { predicate(it) }
+                .forEach { task ->
+                    task.dependsOn("ktlintCheck")
+                }
+        }
+    }
+}
+
 moduleGraphConfig {
     readmePath.set("$projectDir/README.md")
     heading.set("### Dependency Diagram")

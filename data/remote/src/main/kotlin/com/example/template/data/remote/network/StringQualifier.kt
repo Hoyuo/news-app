@@ -8,4 +8,8 @@ annotation class BaseUrl
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class AccessToken
+annotation class ApiKey
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class CountryCode

@@ -1,17 +1,20 @@
 package com.example.template.data.remote.di
 
-import com.example.template.data.remote.network.AccessToken
+import android.content.Context
+import com.example.template.data.remote.R
+import com.example.template.data.remote.network.ApiKey
 import com.example.template.data.remote.network.BaseUrl
 import com.example.template.data.remote.network.ConnectTimeout
+import com.example.template.data.remote.network.CountryCode
 import com.example.template.data.remote.network.ReadTimeout
 import com.example.template.data.remote.network.WriteTimeout
 import com.example.template.data.remote.network.interceptor.AuthInterceptor
-import com.example.template.data.remote.network.interceptor.HeaderInterceptor
 import com.example.template.data.remote.network.interceptor.LoggingInterceptor
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -27,14 +30,26 @@ object NetworkModule {
 
     @BaseUrl
     @Provides
-    fun provideBaseUrl(): String {
-        return "https://example.com"
+    fun provideBaseUrl(
+        @ApplicationContext context: Context,
+    ): String {
+        return context.getString(R.string.baseUrl)
     }
 
-    @AccessToken
+    @ApiKey
     @Provides
-    fun provideAccessToken(): String {
-        return ""
+    fun provideAPIKey(
+        @ApplicationContext context: Context,
+    ): String {
+        return context.getString(R.string.apiKey)
+    }
+
+    @CountryCode
+    @Provides
+    fun provideCountryCode(
+        @ApplicationContext context: Context,
+    ): String {
+        return context.getString(R.string.country)
     }
 
     @WriteTimeout
@@ -62,7 +77,6 @@ object NetworkModule {
         @ReadTimeout readTimeout: Long,
         @ConnectTimeout connectTimeout: Long,
         @LoggingInterceptor loggingInterceptor: Interceptor,
-        @HeaderInterceptor headerInterceptor: Interceptor,
         @AuthInterceptor authInterceptor: Interceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder()
@@ -70,7 +84,6 @@ object NetworkModule {
             .readTimeout(readTimeout, TimeUnit.SECONDS)
             .connectTimeout(connectTimeout, TimeUnit.SECONDS)
             .addInterceptor(loggingInterceptor)
-            .addInterceptor(headerInterceptor)
             .addInterceptor(authInterceptor)
             .build()
     }

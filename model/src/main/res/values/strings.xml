@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="apiKey">430435f8af8845efa38816f5087936b6</string>
+    <string name="baseUrl">https://newsapi.org/</string>
+    <string name="country">kr</string>
+</resources>

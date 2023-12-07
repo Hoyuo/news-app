@@ -1,6 +1,6 @@
 package com.example.template.data.remote.di
 
-import com.example.template.data.remote.service.ExampleService
+import com.example.template.data.remote.service.NewsService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +16,7 @@ object ServiceModule {
     @Singleton
     fun provideExampleService(
         retrofit: Retrofit,
-    ): ExampleService {
-        return retrofit.create(ExampleService::class.java)
+    ): NewsService {
+        return retrofit.create(NewsService::class.java)
     }
 }

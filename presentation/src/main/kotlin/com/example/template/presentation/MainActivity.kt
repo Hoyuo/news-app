@@ -3,6 +3,7 @@ package com.example.template.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
+import com.example.template.presentation.adapter.HeadlineAdapter
 import com.example.template.presentation.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,5 +21,7 @@ class MainActivity : ComponentActivity() {
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+        binding.recyclerView.adapter = HeadlineAdapter {
+        }
     }
 }

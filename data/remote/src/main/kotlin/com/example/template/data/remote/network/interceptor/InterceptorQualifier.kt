@@ -8,10 +8,6 @@ annotation class LoggingInterceptor
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class HeaderInterceptor
-
-@Retention(AnnotationRetention.BINARY)
-@Qualifier
 annotation class AuthInterceptor
 
 

@@ -21,7 +21,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "template"
+rootProject.name = "NewsApp"
 include(":app")
 include(":model")
 include(":data")
