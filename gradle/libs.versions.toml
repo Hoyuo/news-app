@@ -56,6 +56,7 @@ androidx_webkit = "1.9.0"
 androidx_browser = "1.7.0"
 # [Document](https://developer.android.com/jetpack/androidx/releases/recyclerview)
 androidx_recyclerview = "1.3.2"
+androidx_cardview = "1.0.0"
 # [Document](https://developer.android.com/jetpack/androidx/releases/constraintlayout)
 androidx_constraintlayout = "2.1.4"
 androidx_constraintlayout_compose = "1.0.1"
@@ -207,6 +208,7 @@ androidx-browser = { group = "androidx.browser", name = "browser", version.ref =
 androidx-paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "androidx_paging" }
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "androidx_paging_compose" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "androidx_recyclerview" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "androidx_cardview" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx_constraintlayout" }
 androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "androidx_constraintlayout_compose" }
 androidx-startup = { group = "androidx.startup", name = "startup-runtime", version.ref = "androidx_startup" }
