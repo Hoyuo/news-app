@@ -2,8 +2,8 @@ package com.example.template.data.local.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.template.data.local.dao.ExampleDao
-import com.example.template.data.local.dao.ExampleDatabase
+import com.example.template.data.local.dao.AppDatabase
+import com.example.template.data.local.dao.ArticleDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,9 +19,9 @@ object RoomModule {
     @Singleton
     fun provideRoomDatabase(
         @ApplicationContext context: Context,
-    ): ExampleDatabase {
+    ): AppDatabase {
         return Room
-            .databaseBuilder(context, ExampleDatabase::class.java, "example.db")
+            .databaseBuilder(context, AppDatabase::class.java, "app_database.db")
             .fallbackToDestructiveMigration()
             .build()
     }
@@ -29,8 +29,8 @@ object RoomModule {
     @Provides
     @Singleton
     fun provideExampleDao(
-        database: ExampleDatabase,
-    ): ExampleDao {
-        return database.exampleDao()
+        database: AppDatabase,
+    ): ArticleDao {
+        return database.articleDao()
     }
 }

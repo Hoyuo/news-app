@@ -1,6 +1,6 @@
 package com.example.template.data.remote.source
 
-import com.example.template.model.response.Headline
+import com.example.template.data.remote.model.response.Headline
 
 /**
  * This is file template

@@ -9,8 +9,6 @@ android.namespace = "com.example.template.data.local"
 android.buildFeatures.resValues = false
 
 dependencies {
-    implementation(projects.model)
-
     implementation(libs.androidx.room)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
@@ -19,4 +17,6 @@ dependencies {
 
     implementation(libs.bundles.protobuf)
     compileOnly(libs.protobuf.google)
+
+    implementation(libs.timber)
 }

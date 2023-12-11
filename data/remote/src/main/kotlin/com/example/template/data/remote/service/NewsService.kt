@@ -1,6 +1,6 @@
 package com.example.template.data.remote.service
 
-import com.example.template.model.response.Headline
+import com.example.template.data.remote.model.response.Headline
 import retrofit2.http.GET
 
 interface NewsService {

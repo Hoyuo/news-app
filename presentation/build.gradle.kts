@@ -6,11 +6,11 @@ plugins {
 }
 
 android.namespace = "com.example.template.presentation"
-android.buildFeatures.resValues = false
+android.buildFeatures.resValues = true
 android.buildFeatures.dataBinding = true
+android.buildFeatures.viewBinding = true
 
 dependencies {
-    implementation(projects.model)
     implementation(projects.domain)
 
     implementation(libs.androidx.appcompat)

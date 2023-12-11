@@ -8,19 +8,20 @@
 
         <variable
             name="data"
-            type="com.example.template.model.response.Article" />
+            type="com.example.template.presentation.model.ArticleUiModel" />
     </data>
-    
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#EEEEEE"
+        android:clipToPadding="false"
         android:padding="16dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,11 +38,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:text="@{data.title}"
                     android:textSize="14dp"
                     app:layout_constraintBottom_toTopOf="@id/publishedAt"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    bind:title="@{data}"
                     tools:text="Title" />
 
                 <TextView
@@ -49,9 +50,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:text="@{data.publishedAt}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    bind:publishedAt="@{data.publishedAt}"
                     tools:text="Published At" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

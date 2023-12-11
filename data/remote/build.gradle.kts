@@ -6,11 +6,9 @@ plugins {
 }
 
 android.namespace = "com.example.template.data.remote"
-android.buildFeatures.resValues = false
+android.buildFeatures.resValues = true
 
 dependencies {
-    implementation(projects.model)
-
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)

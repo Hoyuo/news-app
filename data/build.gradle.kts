@@ -8,7 +8,8 @@ android.namespace = "com.example.template.data"
 android.buildFeatures.resValues = false
 
 dependencies {
-    implementation(projects.model)
     implementation(projects.data.local)
     implementation(projects.data.remote)
+
+    implementation(libs.timber)
 }

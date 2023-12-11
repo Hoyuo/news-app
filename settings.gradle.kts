@@ -23,7 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "NewsApp"
 include(":app")
-include(":model")
 include(":data")
 include(":data:local")
 include(":data:remote")

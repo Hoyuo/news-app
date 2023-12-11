@@ -1,9 +1,7 @@
 package com.example.template.data.local.di
 
-import com.example.template.data.local.source.ExampleDataStoreSource
-import com.example.template.data.local.source.ExampleDataStoreSourceImpl
-import com.example.template.data.local.source.ExampleDatabaseSource
-import com.example.template.data.local.source.ExampleDatabaseSourceImpl
+import com.example.template.data.local.source.AppDatabaseSource
+import com.example.template.data.local.source.AppDatabaseSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,11 +13,6 @@ abstract class LocalSourceModule {
 
     @Binds
     abstract fun bindExampleDatabaseSource(
-        exampleDatabaseSourceImpl: ExampleDatabaseSourceImpl,
-    ): ExampleDatabaseSource
-
-    @Binds
-    abstract fun bindExampleDataStoreSource(
-        exampleDataStoreSourceImpl: ExampleDataStoreSourceImpl,
-    ): ExampleDataStoreSource
+        exampleDatabaseSourceImpl: AppDatabaseSourceImpl,
+    ): AppDatabaseSource
 }

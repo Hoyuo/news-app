@@ -14,6 +14,6 @@ abstract class DataModule {
     @Binds
     @Singleton
     abstract fun bindNewsRepository(
-        exampleRepositoryImpl: NewsRepositoryImpl,
+        newsRepositoryImpl: NewsRepositoryImpl,
     ): NewsRepository
 }
