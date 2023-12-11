@@ -25,8 +25,6 @@ dependencies {
     implementation(projects.domain)
     implementation(projects.presentation)
 
-    implementation(libs.androidx.core)
-    implementation(libs.androidx.appcompat)
     implementation(libs.google.material)
 
     implementation(libs.timber)
